@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldSense 360</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <section id="myinfo-verification-screen" class="screen hidden">
+            <div class="header-icon-container">
+                <span class="material-icons shield-icon">shield</span>
+            </div>
+            <h1>Verify your profile using Myinfo</h1>
+            <p class="subtitle">Get instant, personalised results with your verified data</p>
+
+            <div class="card data-retrieval-card">
+                <h3>Data to be retrieved:</h3>
+                <ul>
+                    <li><span class="material-icons bullet-point">circle</span> NRIC/FIN</li>
+                    <li><span class="material-icons bullet-point">circle</span> Date of birth</li>
+                    <li><span class="material-icons bullet-point">circle</span> Employment status</li>
+                    <li><span class="material-icons bullet-point">circle</span> Annual income</li>
+                    <li><span class="material-icons bullet-point">circle</span> Occupation</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                Your data is secured and <span class="protected-text">protected</span>. We only use this information to provide personalised insurance recommendations and will not share it with third parties.
+            </div>
+
+            <button class="btn btn-primary" id="verifySingpassBtn">Verify with Singpass</button>
+            <a href="#" class="link-secondary" id="manualEntryLink">Prefer manual entry? Fill form instead</a>
+        </section>
+
+        <section id="home-screen" class="screen active">
+            <div class="header">
+                <h1>Hello, Welcome! 👋</h1>
+                <p>Your personal healthcare protection advisor</p>
+            </div>
+
+            <div class="card main-card">
+                <div class="card-icon-header">
+                    <span class="material-icons shield-icon">shield</span>
+                    <h2>Calculate Your ShieldScore</h2>
+                </div>
+                <p>Get personalised protection insights</p>
+                <p class="description">Discover how well-protected you are against healthcare costs and get personalised recommendations to optimise your coverage.</p>
+                <button class="btn btn-primary" id="calculateScoreHomeBtn">Calculate My Score Now</button>
+            </div>
+
+            <div class="divider">or</div>
+
+            <button class="btn btn-singpass" id="loginSingpassHomeBtn">
+                <img src="pictures/singpass_button.png" alt="Log in with singpass button">
+            </button>
+
+            <div class="explore-features-section">
+                <h2>Explore More Features</h2>
+                <div class="feature-cards-grid">
+                    <div class="card feature-card" id="aiChatAdvisorCard">
+                        <div class="card-icon"><span class="material-icons">chat</span></div>
+                        <div class="card-content">
+                            <h3>AI Chat Advisor</h3>
+                            <p>Get instant answers to your insurance questions</p>
+                        </div>
+                    </div>
+                    <div class="card feature-card" id="comparePlansCard">
+                        <div class="card-icon"><span class="material-icons">bar_chart</span></div>
+                        <div class="card-content">
+                            <h3>Compare Plans</h3>
+                            <p>Side-by-side comparison of coverage options</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile-step1-screen" class="screen hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="header">
+                <p class="step-indicator">Step 1 of 2:</p>
+                <h1>Create Your Profile</h1>
+            </div>
+
+            <form id="profile-step1-form">
+                <div class="form-section">
+                    <h2>About You</h2>
+                    <label for="age">What is your current age?</label>
+                    <input type="number" id="age" name="age" value="30" min="1" max="100" required>
+                </div>
+
+                <div class="form-section">
+                    <h2>Which best describes your financial situation?</h2>
+                    <div class="option-grid three-col">
+                        <button type="button" class="option-card" data-value="Struggling to save">Struggling to save</button>
+                        <button type="button" class="option-card" data-value="Saving actively">Saving actively</button>
+                        <button type="button" class="option-card" data-value="Investing significantly">Investing significantly</button>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Your Healthcare Preferences</h2>
+                    <div class="option-grid two-col">
+                        <button type="button" class="option-card icon-card" data-value="Private Hospital">
+                            <span class="material-icons">local_hospital</span>
+                            <h3>Private Hospital</h3>
+                            <p>No subsidy, higher costs</p>
+                        </button>
+                        <button type="button" class="option-card icon-card" data-value="Public - Class A">
+                            <span class="material-icons">apartment</span>
+                            <h3>Public - Class A</h3>
+                            <p>No subsidy, lower costs</p>
+                        </button>
+                        <button type="button" class="option-card icon-card" data-value="Public - Class B1">
+                            <span class="material-icons">hotel</span>
+                            <h3>Public - Class B1</h3>
+                            <p>Partial subsidy, standard stays</p>
+                        </button>
+                        <button type="button" class="option-card icon-card" data-value="Public - B2/C (Subsidised)">
+                            <span class="material-icons">shield</span>
+                            <h3>Public - B2/C (Subsidised)</h3>
+                            <p>Substantial subsidy for stays</p>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Next: Refine Profile</button>
+            </form>
+        </section>
+
+        <section id="profile-step2-screen" class="screen hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <div class="header">
+                <a href="#" class="back-arrow" id="backToStep1"><span class="material-icons">arrow_back_ios</span></a>
+                <p class="step-indicator">Step 2 of 2:</p>
+                <h1>Refine Your Profile (Optional)</h1>
+            </div>
+
+            <form id="profile-step2-form">
+                <div class="form-section">
+                    <h2>Your Current Coverage</h2>
+                    <select id="current-plan" name="currentPlan">
+                        <option value="">Select your current plan (if any)</option>
+                        <option value="MediShield Life Only">MediShield Life Only</option>
+                        <option value="PRUShield Standard">PRUShield Standard</option>
+                        <option value="PRUShield Plus">PRUShield Plus</option>
+                        <option value="PRUShield Premier">PRUShield Premier</option>
+                        <option value="Other Private Integrated Shield Plan">Other Private Integrated Shield Plan</option>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <h2>Health & Lifestyle</h2>
+                    <p class="section-subtitle">Select any that apply to you or your family:</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="healthConditions" value="Diabetes"> Diabetes (Type 1 or 2)</label>
+                        <label><input type="checkbox" name="healthConditions" value="High blood pressure"> High blood pressure</label>
+                        <label><input type="checkbox" name="healthConditions" value="Heart conditions"> Heart conditions</label>
+                        <label><input type="checkbox" name="healthConditions" value="Cancer history (family)"> Cancer history (family)</label>
+                        <label><input type="checkbox" name="healthConditions" value="Chronic conditions"> Chronic conditions</label>
+                        <label><input type="checkbox" name="healthConditions" value="None of the above" id="noneOfTheAbove"> None of the above</label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Your Financials</h2>
+                    <label for="monthly-income">What is your approximate monthly income?</label>
+                    <select id="monthly-income" name="monthlyIncomeRange">
+                        <option value="">Select income range</option>
+                        <option value="<$2,000"><$2,000</option>
+                        <option value="$2,000 - $4,000">$2,000 - $4,000</option>
+                        <option value="$4,001 - $6,000">$4,001 - $6,000</option>
+                        <option value="$6,001 - $10,000">$6,001 - $10,000</option>
+                        <option value=">$10,000">>$10,000</option>
+                    </select>
+
+                    <label for="medisave-balance">What is your approximate MediSave balance? <span class="material-icons info-icon" title="Your MediSave balance can be used to pay for Integrated Shield Plan premiums.">info</span></label>
+                    <select id="medisave-balance" name="medisaveBalanceRange">
+                        <option value="">Select balance range</option>
+                        <option value="<$5,000"><$5,000</option>
+                        <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                        <option value="$20,001 - $50,000">$20,001 - $50,000</option>
+                        <option value=">$50,000">>$50,000</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">See My Personalised Result</button>
+            </form>
+        </section>
+
+        <section id="loading-screen" class="screen hidden centered-content">
+            <div class="loading-spinner"></div>
+            <p>Calculating your ShieldScore...</p>
+        </section>
+
+        <section id="results-screen" class="screen hidden">
+            <div class="header">
+                <h1>Your Personalised Result</h1>
+            </div>
+
+            <div class="card result-summary-card">
+                <div class="score-circle">
+                    <span id="shieldScoreValue">100</span>
+                </div>
+                <div class="score-category" id="shieldScoreCategory">Excellent Fit</div>
+                <p class="score-description" id="scoreDescription">This score means the recommended plan provides strong coverage for your needs at an efficient cost.</p>
+
+                <div class="savings-section">
+                    <p class="section-title">POTENTIAL LIFETIME SAVINGS</p>
+                    <p class="savings-amount" id="lifetimeSavings">$91,000</p>
+                    <p class="savings-subtitle">vs more expensive alternatives</p>
+                    <p class="projected-cost">Projected Lifetime Cost (Cash Outlay) <span id="projectedCost">~$340,000</span></p>
+                </div>
+
+                <div class="recommended-plan-section">
+                    <p class="section-title">Your Recommended Plan</p>
+                    <button class="btn btn-recommended-plan" id="recommendedPlanName">MediShield Life only</button>
+                    <p class="recommendation-text" id="recommendedPlanDetails">Recommendation: MediShield Life (MediShield Life only)</p>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" id="viewPlanDetailsBtn">View Plan Details</button>
+            <button class="btn btn-primary" id="comparePlansResultsBtn">Compare Plans</button>
+        </section>
+
+        <section id="breakdown-screen" class="screen hidden">
+            <div class="header">
+                <a href="#" class="back-arrow" id="backToResults"><span class="material-icons">arrow_back_ios</span></a>
+                <h1>Your ShieldScore Breakdown</h1>
+            </div>
+
+            <div class="card result-summary-card">
+                <div class="score-circle">
+                    <span id="breakdownShieldScoreValue">100</span>
+                </div>
+                <div class="score-category" id="breakdownShieldScoreCategory">Excellent Fit</div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-title">Ward Coverage Fit <span class="material-icons info-icon" title="This assesses how well your preferred hospital ward type aligns with the recommended plan's coverage.">info</span></div>
+                    <div class="breakdown-score"><span id="wardCoverageScore">30</span>/<span id="wardCoverageMax">30</span> pts</div>
+                    <p class="breakdown-description" id="wardCoverageDescription">Your choice of Public - B2/C (Subsidised) matches the recommended 'MediShield Life only' perfectly.</p>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-title">Out-of-Pocket Costs <span class="material-icons info-icon" title="This measures the potential amount you might have to pay yourself (deductibles and co-insurance) with the recommended plan.">info</span></div>
+                    <div class="breakdown-score"><span id="outOfPocketScore">20</span>/<span id="outOfPocketMax">20</span> pts</div>
+                    <p class="breakdown-description" id="outOfPocketDescription">This plan has a moderate deductible. A rider could reduce this but would increase your premium.</p>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-title">Future Premium Affordability <span class="material-icons info-icon" title="This evaluates how affordable the plan's premiums are likely to remain as you age, considering premium increases.">info</span></div>
+                    <div class="breakdown-score"><span id="premiumAffordabilityScore">15</span>/<span id="premiumAffordabilityMax">15</span> pts</div>
+                    <p class="breakdown-description" id="premiumAffordabilityDescription">The premiums are affordable now but may become challenging after age 65.</p>
+                </div>
+
+                <div class="action-plan-section">
+                    <h2>Your Action Plan</h2>
+                    <p id="actionPlanText">Your analysis suggests MediShield Life only is the most appropriate coverage. MediShield Life is designed to cover subsidised public wards (B2/C). You are generally not eligible for private IP coverage unless you choose to upgrade your ward preference. We recommend discussing these results with a financial adviser to understand the full implications for your personal circumstances. Note: Based on MOH data, actual lifetime premiums can vary significantly between insurers even within the same tier.</p>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" id="askAiBreakdownBtn">Have a question? Ask Our AI</button>
+            <button class="btn btn-primary">Download PDF Summary</button>
+        </section>
+
+        <section id="ai-chat-screen" class="screen hidden">
+            <div class="header">
+                <a href="#" class="back-arrow" id="backFromChat"><span class="material-icons">arrow_back_ios</span></a>
+                <h1>AI Chat Advisor</h1>
+            </div>
+
+            <div class="chat-window">
+                <div class="chat-message ai-message">
+                    Hi there! I'm your AI advisor for Integrated Shield Plans. How can I help you today?
+                </div>
+                <div class="suggested-questions">
+                    <button class="suggested-q-btn" data-question="What is a rider?">What is a rider?</button>
+                    <button class="suggested-q-btn" data-question="Explain co-insurance">Explain co-insurance</button>
+                    <button class="suggested-q-btn" data-question="What's the difference between Class A and B1?">What's the difference between Class A and B1?</button>
+                    <button class="suggested-q-btn" data-question="How does MediSave work?">How does MediSave work?</button>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button class="btn btn-chat-send" id="chatSendBtn"><span class="material-icons">send</span></button>
+            </div>
+        </section>
+
+        <section id="compare-plans-screen" class="screen hidden">
+            <div class="header">
+                <a href="#" class="back-arrow" id="backFromCompare"><span class="material-icons">arrow_back_ios</span></a>
+                <h1>Compare PRUShield Plans</h1>
+            </div>
+
+            <div class="plan-cards-container">
+                <div class="card plan-card">
+                    <h2>PRUShield Standard</h2>
+                    <p class="plan-price">$45/month</p>
+                    <div class="plan-details">
+                        <p>Coverage Limit: <span class="detail-value">No Limit</span></p>
+                        <p>Co-pay: <span class="detail-value">10% + $3K deductible</span></p> </div>
+                    <div class="key-benefits">
+                        <h3>Key Benefits</h3>
+                        <ul>
+                            <li><span class="material-icons check-icon">check_circle</span> Class B1/C ward coverage</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Outpatient treatment</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Pre/post hospitalisation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card plan-card">
+                    <h2>PRUShield Plus</h2>
+                    <p class="plan-price">$68/month</p>
+                    <div class="plan-details">
+                        <p>Coverage Limit: <span class="detail-value">No Limit</span></p>
+                        <p>Co-pay: <span class="detail-value">5% + $3K deductible</span></p>
+                    </div>
+                    <div class="key-benefits">
+                        <h3>Key Benefits</h3>
+                        <ul>
+                            <li><span class="material-icons check-icon">check_circle</span> Class B1/A ward coverage</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Enhanced outpatient</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Overseas emergency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card plan-card">
+                    <h2>PRUShield Premier</h2>
+                    <p class="plan-price">$125/month</p>
+                    <div class="plan-details">
+                        <p>Coverage Limit: <span class="detail-value">No Limit</span></p>
+                        <p>Co-pay: <span class="detail-value">0% + $3K deductible</span></p>
+                    </div>
+                    <div class="key-benefits">
+                        <h3>Key Benefits</h3>
+                        <ul>
+                            <li><span class="material-icons check-icon">check_circle</span> Private ward coverage</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Comprehensive benefits</li>
+                            <li><span class="material-icons check-icon">check_circle</span> Worldwide coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box advisory-box">
+                <span class="material-icons lightbulb-icon">lightbulb</span>
+                Need help deciding? Our financial advisors can provide personalised guidance based on your specific needs.
+            </div>
+        </section>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" data-target="home-screen">
+                <span class="material-icons">home</span>
+                Home
+            </a>
+            <a href="#" class="nav-item" data-target="profile-step1-screen">
+                <span class="material-icons">calculate</span>
+                Calculator
+            </a>
+            <a href="#" class="nav-item" data-target="ai-chat-screen">
+                <span class="material-icons">chat</span>
+                Chat
+            </a>
+        </nav>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

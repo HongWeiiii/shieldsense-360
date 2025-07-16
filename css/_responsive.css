@@ -1,0 +1,45 @@
+/* css/_responsive.css */
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    /* For tablets and larger screens, make feature cards go side by side */
+    .feature-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .plan-cards-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for compare plans */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Smaller adjustments for very small mobile screens */
+    #app-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .screen {
+        padding: 15px;
+    }
+    .header h1 {
+        font-size: 1.6em;
+    }
+    .btn {
+        padding: 12px 15px;
+    }
+    .option-grid.two-col, .option-grid.three-col {
+        grid-template-columns: 1fr; /* Stack options vertically on very small screens */
+    }
+    .option-card {
+        height: auto; /* Allow height to adjust */
+        padding: 10px; /* Slightly less padding */
+    }
+    .option-card.icon-card {
+        height: 120px; /* Adjust height for icon card */
+    }
+    .chat-input-container {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+    #chatInput {
+        padding: 10px 12px;
+    }
+}

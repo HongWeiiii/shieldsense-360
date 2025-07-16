@@ -1,0 +1,13 @@
+/* css/_variables.css */
+
+:root {
+    --color-white: #FFFFFF;
+    --color-dark-blue: #2563EB; /* Primary brand color */
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-accent-blue: #2563EB; /* Used main blue for accent */
+    --color-success-green: #28a745;
+    --color-border: #E0E0E0;
+    --color-light-gray: #F5F5F5;
+    --color-gray-bg: #F0F2F5; /* For progress bar, etc. */
+}

@@ -1,0 +1,165 @@
+/* css/_forms.css */
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: var(--color-text-primary);
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--color-text-primary);
+    background-color: var(--color-white);
+    -webkit-appearance: none; /* Remove default arrow for select */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 20px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield; /* Ensure it behaves as a text field for number inputs */
+}
+
+.option-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.option-grid.three-col {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.option-grid.two-col {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for icon cards */
+}
+
+.option-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Uniform height for cards */
+}
+
+.option-card:hover {
+    border-color: var(--color-dark-blue);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.option-card.selected {
+    border-color: var(--color-dark-blue);
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-card.selected h3,
+.option-card.selected p,
+.option-card.selected .material-icons {
+    color: var(--color-white);
+}
+
+.option-card.icon-card {
+    height: 140px; /* Taller for icon + text */
+}
+
+.option-card .material-icons {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    color: var(--color-dark-blue);
+}
+
+.option-card h3 {
+    font-size: 1.05em;
+    margin-bottom: 2px;
+    color: var(--color-text-primary);
+}
+
+.option-card p {
+    font-size: 0.75em;
+    color: var(--color-text-secondary);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-white);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--color-dark-blue);
+    border-color: var(--color-dark-blue);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '\2713'; /* Checkmark character */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.section-subtitle {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    margin-bottom: 15px;
+}
+
+.info-icon {
+    font-size: 1.1em;
+    color: var(--color-accent-blue);
+    vertical-align: middle;
+    margin-left: 5px;
+    cursor: help;
+}

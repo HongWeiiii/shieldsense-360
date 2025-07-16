@@ -1,0 +1,133 @@
+/* css/_layout.css */
+
+#app-container {
+    width: 100%;
+    max-width: 450px; /* Typical mobile width */
+    background-color: var(--color-white);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For bottom nav */
+}
+
+.screen {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto; /* Enable scrolling for content */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 70px; /* Space for bottom nav */
+}
+
+.screen.hidden {
+    display: none;
+}
+
+/* New style for screens that need content centered both horizontally and vertically */
+.screen.centered-content {
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text inside is also centered */
+}
+
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* For back arrow positioning */
+}
+
+.header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+}
+
+.header .step-indicator {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+}
+
+.header-icon-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.shield-icon {
+    font-size: 4em;
+    color: var(--color-dark-blue);
+    background-color: var(--color-light-gray);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-size: 0.75em;
+    transition: color 0.2s ease;
+}
+
+.nav-item .material-icons {
+    font-size: 1.6em;
+    margin-bottom: 4px;
+}
+
+.nav-item.active {
+    color: var(--color-dark-blue);
+}
+
+.nav-item:hover {
+    color: var(--color-dark-blue);
+}
+
+/* Back Arrow */
+.back-arrow {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    font-size: 1.8em;
+    color: var(--color-dark-blue);
+    text-decoration: none;
+    padding: 10px;
+    z-index: 10;
+}
+.back-arrow .material-icons {
+    font-size: inherit;
+}

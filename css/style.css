@@ -1,0 +1,22 @@
+/* css/style.css */
+
+/* Import variables first */
+@import url('_variables.css');
+
+/* Import base styles (resets, body, typography) */
+@import url('_base.css');
+
+/* Import main layout styles (app-container, screen visibility, header, bottom nav) */
+@import url('_layout.css');
+
+/* Import generic UI component styles (buttons, cards, info boxes, loading spinner) */
+@import url('_components.css');
+
+/* Import form-specific styles (inputs, selects, option cards, checkboxes) */
+@import url('_forms.css');
+
+/* Import styles for specific features/sections (home features, compare plans) */
+@import url('_features.css');
+
+/* Import responsive adjustments last to override if needed */
+@import url('_responsive.css');

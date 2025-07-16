@@ -1,0 +1,25 @@
+{
+  "name": "shieldsense-360",
+  "version": "1.0.0",
+  "description": "A responsive web application for calculating a personalized healthcare ShieldScore and providing related information.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -o", 
+    "start": "http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "healthcare",
+    "insurance",
+    "shieldscore",
+    "singpass",
+    "myinfo",
+    "advisor",
+    "web"
+  ],
+  "author": "Your Name Here",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

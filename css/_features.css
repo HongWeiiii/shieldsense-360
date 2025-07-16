@@ -1,0 +1,211 @@
+/* css/_features.css */
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.explore-features-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+}
+
+.feature-card .card-icon {
+    margin-right: 15px;
+    background-color: var(--color-light-gray);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-card .card-icon .material-icons {
+    font-size: 1.8em;
+    color: var(--color-dark-blue);
+}
+
+.feature-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.feature-card p {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+/* Home Screen Main Card */
+#home-screen .main-card {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#home-screen .card-icon-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#home-screen .card-icon-header .shield-icon {
+    font-size: 2.5em;
+    margin-right: 10px;
+    padding: 8px;
+    background-color: transparent;
+    color: var(--color-dark-blue);
+}
+
+#home-screen .main-card h2 {
+    font-size: 1.4em;
+    margin: 0;
+    color: var(--color-dark-blue);
+}
+
+#home-screen .main-card .description {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Compare Plans Screen */
+.plan-cards-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 20px;
+}
+
+.plan-card {
+    text-align: center;
+}
+
+.plan-card h2 {
+    font-size: 1.3em;
+    color: var(--color-dark-blue);
+    margin-bottom: 10px;
+}
+
+.plan-card .plan-price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--color-dark-blue);
+    margin-bottom: 15px;
+}
+
+.plan-details {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+}
+
+.plan-details p {
+    margin-bottom: 5px;
+}
+
+.plan-details .detail-value {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.key-benefits {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.key-benefits h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.key-benefits ul {
+    list-style: none;
+}
+
+.key-benefits li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.check-icon {
+    font-size: 1.2em;
+    color: var(--color-success-green);
+    margin-right: 8px;
+}
+
+/* AI Chat Advisor */
+#ai-chat-screen {
+    position: relative;
+    padding-bottom: 120px; /* Space for input and nav */
+}
+
+.chat-window {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px; /* For scrollbar */
+    margin-bottom: 10px;
+    /* Limit height for smaller screens, allow scroll */
+    max-height: calc(100vh - 250px); /* Adjust based on header/footer */
+}
+
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--color-border);
+    position: absolute; /* Position at bottom of screen */
+    bottom: 60px; /* Above nav bar */
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--color-white);
+    z-index: 20; /* Above chat window content */
+}

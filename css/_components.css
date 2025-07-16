@@ -1,0 +1,369 @@
+/* css/_components.css */
+
+/* Cards */
+.card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+}
+
+/* Info Boxes */
+.info-box, .advisory-box {
+    background-color: var(--color-light-gray);
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 0.85em;
+    color: var(--color-text-primary);
+    margin-bottom: 20px;
+    /* Removed display: flex from here and applied to a wrapper inside if icons are needed for this specific box. */
+    /* Instead, for general text wrapping, just ensure text-align is left */
+    text-align: left; /* Ensures text alignment is natural for the whole box */
+    word-break: break-word; /* Ensures long words break to prevent overflow */
+}
+
+/* Improve paragraph readability for info-box and advisory-box */
+.info-box p, .advisory-box p {
+  margin: 0; /* Remove default paragraph margins */
+  padding: 0; /* Remove default paragraph padding */
+  line-height: 1.6; /* Improves line spacing for readability */
+  text-align: left; /* Ensures text alignment is natural within the paragraph */
+  word-break: break-word; /* Allows long words to break and wrap */
+  color: var(--color-text-primary); /* Ensures consistent text color */
+}
+
+
+/* Buttons */
+.btn {
+    display: block; /* Keep block level as before for full width by default */
+    width: 100%; /* Keep full width as before */
+    padding: 15px 20px; /* Keep consistent padding for height */
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #1a4fbf; /* Slightly darker new blue */
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
+    border: 1px solid var(--color-dark-blue);
+    margin-bottom: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-light-gray);
+    transform: translateY(-1px);
+}
+
+.link-secondary {
+    display: block;
+    text-align: center;
+    color: var(--color-dark-blue);
+    font-size: 0.9em;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.link-secondary:hover {
+    text-decoration: underline;
+}
+
+.btn-singpass {
+  display: block; /* Ensures it takes full width for alignment */
+  width: 100%; /* Matches other buttons for consistent width */
+  height: 3.5rem; /* Consistent height with other primary buttons */
+  padding: 0; /* Remove any padding that might interfere with image scaling */
+  border: none; /* Remove any default button border to rely on image border */
+  background-color: transparent; /* Ensure no background color interferes */
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.1s ease; /* Keep hover effects */
+}
+
+.btn-singpass:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.btn-singpass img {
+  display: block; /* Important for accurate width/height calculations and centering */
+  width: 100%; /* Make image fill 100% of the *available width* within the button's padding */
+  max-width: 250px; /* Limit max width for image for better responsiveness on larger screens */
+  height: 100%; /* Make image fill 100% of the *available height* within the button's padding */
+  object-fit: contain; /* Ensures the image scales down to fit without cropping or stretching */
+  border: none; /* Ensure the image itself doesn't have a border */
+  margin: 0 auto; /* Center the image horizontally within the button */
+}
+
+
+.data-retrieval-card ul {
+  list-style: none; /* Removes default list bullets */
+  padding-left: 0; /* Remove default padding for list */
+  margin: 0; /* Remove default margin for list */
+}
+
+.data-retrieval-card li {
+  display: flex; /* Use flexbox for alignment */
+  align-items: flex-start; /* Aligns the icon with the text's first line */
+  gap: 0.5rem; /* Provides spacing between the bullet icon and the text */
+  margin-bottom: 0.75rem; /* Spacing between list items */
+  text-align: left; /* Ensure text aligns left within the list item */
+}
+
+.bullet-point {
+  font-size: 1.2rem;
+  line-height: 1.4; /* Fine-tunes line spacing for the bullet */
+  margin-top: 0.2rem; /* Adjusts vertical alignment of the bullet icon */
+  color: #2962ff; /* Ensure consistent blue */
+  flex-shrink: 0; /* Prevent the bullet from shrinking */
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-gray-bg);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-dark-blue);
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 5px solid var(--color-border);
+    border-top: 5px solid var(--color-dark-blue);
+    border-radius: 50%;
+    width: 70px; /* Increased size */
+    height: 70px; /* Increased size */
+    animation: spin 1s linear infinite;
+    margin: 30px auto; /* Centered horizontally with more margin */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result Summary Card specific elements */
+.result-summary-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 8px solid var(--color-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-dark-blue);
+}
+
+.score-category {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--color-success-green);
+    color: var(--color-white);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.score-description {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+.savings-section, .recommended-plan-section {
+    margin-bottom: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.section-title {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.savings-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-success-green);
+    margin-bottom: 5px;
+}
+
+.savings-subtitle {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+}
+
+.projected-cost {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+}
+
+.btn-recommended-plan {
+    display: inline-block;
+    width: auto;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.recommendation-text {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+/* Breakdown item specifics */
+.breakdown-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.breakdown-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.breakdown-title {
+    font-weight: 600;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.breakdown-score {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-dark-blue);
+    margin-bottom: 5px;
+}
+
+.breakdown-description {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+.action-plan-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.action-plan-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.action-plan-section p {
+    font-size: 0.9em;
+    color: var(--color-text-primary);
+}
+
+/* Chat Messages */
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.ai-message {
+    background-color: var(--color-light-gray);
+    color: var(--color-text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+/* Suggested Questions */
+.suggested-q-btn {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-dark-blue);
+    color: var(--color-dark-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggested-q-btn:hover {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+}
+
+/* Chat Input */
+#chatInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 25px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.btn-chat-send {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-chat-send .material-icons {
+    font-size: 1.5em;
+}
